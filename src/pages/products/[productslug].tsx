@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import styles from '../SingleProduct.module.css';
+import styles from './SingleProduct.module.css';
 
 const singleproduct = () => {
   return (
