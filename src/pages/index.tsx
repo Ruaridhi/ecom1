@@ -23,7 +23,7 @@ export async function getStaticProps() {
     cache: new InMemoryCache(),
   });
 
-  const data = await client.query({
+  const productsdata = await client.query({
     query: gql`
       query ProductsQuery {
         products {
@@ -41,7 +41,7 @@ export async function getStaticProps() {
 
   //console.log(data.data.products);
 
-  const allProducts = data.data.products;
+  const allProducts = productsdata.data.products;
   console.log('******', allProducts);
   return {
     props: { allProducts },

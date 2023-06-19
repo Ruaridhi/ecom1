@@ -1,33 +1,67 @@
 import Head from 'next/head';
+import Image from 'next/image';
+import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 
 import styles from './SingleProduct.module.css';
 
-const singleproduct = () => {
+const singleproduct = ({ product }: { product: any }) => {
+  console.log('$$$$', product);
   return (
-    <>
-      <Head>
-        <title>Dracaena fragrans</title>
-      </Head>
-      <div className={styles.single_container}>
-        <div className={styles.left_section}>
-          <img src="/images/croton.png" className={styles.left_img} alt="" />
-        </div>
-        <div className={styles.right_section}>
-          <h3 className={styles.title}>Dracaena fragrans</h3>
-          <p className={styles.price}>$50</p>
-          <div className={styles.para}>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-              impedit voluptatum vitae labore molestiae, maiores, hic ad
-              officiis laudantium in officia, nam vel quod! Nesciunt aperiam
-              explicabo facere laboriosam eius.
-            </p>
-          </div>
-          <button className="btn">Add to cart 🛒</button>
-        </div>
+    <div className="container single-container">
+      <h1>BOOOOM</h1>
+      <div className="left-section">
+        <img src={product.image.url} width={300} height={700} alt="" />
       </div>
-    </>
+      <div className="right-section">
+        <h3>{product.name}</h3>
+        <p className="price">${product.price}</p>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: product.description?.html,
+          }}
+        ></div>
+        <a className="btn">Add to cart 🛒</a>
+      </div>
+    </div>
   );
 };
+
+export async function getServerSideProps({ params }: { params: any }) {
+  const client = new ApolloClient({
+    uri: 'https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clivsbybz0h0401ut2cow8e1c/master',
+    cache: new InMemoryCache(),
+  });
+
+  console.log('^^^^^', params);
+
+  const paramsdata = await client.query({
+    query: gql`
+      query MyQuery($slug: String) {
+        product(where: { slug: $slug }) {
+          id
+          name
+          price
+          slug
+          description {
+            text
+          }
+          image {
+            url
+          }
+        }
+      }
+    `,
+    variables: {
+      slug: params.productslug,
+    },
+  });
+
+  const product = paramsdata.data.product;
+
+  console.log('%%%%', paramsdata.data.product);
+  return {
+    props: { product },
+  };
+}
 
 export default singleproduct;

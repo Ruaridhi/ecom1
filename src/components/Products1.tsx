@@ -18,7 +18,7 @@ export default function Products({ allProducts }: { allProducts: any }) {
           {allProducts.map((product: any) => {
             return (
               <div className={styles.product_card} key={product.id}>
-                <Link href={`products/${product.name}`}>
+                <Link href={`products/${product.slug}`}>
                   <div className={styles.product_img}>
                     <img src={product.image.url} alt={product.name} />
                   </div>
