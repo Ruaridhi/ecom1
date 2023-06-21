@@ -1,13 +1,13 @@
 .navbar {
   display: flex;
-
   justify-content: space-between;
-  align-items: center;
-  background-color: #5aa388;
-  color: #fff;
-  padding: 20px 250px;
+  align-items: flex-start;
+  /* background-color: #5aa388; */
+  color: black;
+  padding-bottom: 20px;
   font-size: 20px;
   font-weight: 600;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 @media (max-width: 500px) {
@@ -17,12 +17,22 @@
 }
 
 .logo,
-.nav_price {
+.cart {
   cursor: pointer;
 }
 
-.logo_span {
-  color: green;
+.cart {
+  margin: 10px;
+}
+
+.logo {
+  color: hotpink;
+  text-decoration: none;
+  font-size: 40px;
+}
+
+.logo h3 {
+  margin-top: 0;
 }
 
 .nav_price {
@@ -30,3 +40,7 @@
   align-items: center;
   gap: 5px;
 }
+
+/* .link a:link {
+  text-decoration: none;
+} */

@@ -1,26 +1,39 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
-
 import styles from './SingleProduct.module.css';
 
 const singleproduct = ({ product }: { product: any }) => {
-  console.log('$$$$', product);
+  const nameCapt = product.name;
+  // console.log('$$$$', product);
   return (
-    <div className="container single-container">
-      <h1>BOOOOM</h1>
-      <div className="left-section">
-        <img src={product.image.url} width={300} height={700} alt="" />
+    <div className={styles.single_container}>
+      <div className={styles.header}>
+        <Link href={'/'} className={styles.homeLink}>
+          All Pieces
+        </Link>
+        <div className={styles.cart}>
+          <span>🛒</span>
+          {/* only show when cart is not empty ? <p>$0.00</p> : null*/}
+        </div>
       </div>
-      <div className="right-section">
-        <h3>{product.name}</h3>
-        <p className="price">${product.price}</p>
-        <div
+      <div className={styles.productDetails}>
+        <h1>{nameCapt.charAt(0).toUpperCase() + nameCapt.slice(1)}</h1>
+
+        <div className="left-section">
+          <img src={product.image.url} width={300} height={700} alt="" />
+        </div>
+        <div className="right-section">
+          <p className="price">${product.price}</p>
+          <p>{product.description?.text}</p>
+          {/* <div
           dangerouslySetInnerHTML={{
             __html: product.description?.html,
           }}
-        ></div>
-        <a className="btn">Add to cart 🛒</a>
+        ></div> */}
+          <button className="btn">Add to cart 🛒</button>
+        </div>
       </div>
     </div>
   );

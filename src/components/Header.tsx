@@ -4,16 +4,14 @@ import styles from './Header.module.css';
 const Header = () => {
   return (
     <nav className={styles.navbar}>
-      <Link href="/">
+      <Link className="link" href="/" style={{ textDecoration: 'none' }}>
         <div className={styles.logo}>
-          <p>
-            PLANTS <span className={styles.logo_span}>☘</span>
-          </p>
+          <h3>F|Y|R</h3>
         </div>
       </Link>
-      <div className={styles.nav_price}>
+      <div className={styles.cart}>
         <span>🛒</span>
-        <p>$0.00</p>
+        {/* only show when cart is not empty ? <p>$0.00</p> : null*/}
       </div>
     </nav>
   );

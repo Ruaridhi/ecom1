@@ -24,4 +24,11 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  /* font-family: 'Courier New', Courier, monospace; */
+  /* margin: auto; */
+  border: solid black;
 }
+
+/* a:link {
+  text-decoration: none;
+} */

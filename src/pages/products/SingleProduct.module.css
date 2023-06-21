@@ -1,3 +1,32 @@
-.test {
-  background-color: aliceblue;
+.single_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Courier New', Courier, monospace;
+  margin-bottom: 5em;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.homeLink {
+  text-decoration: none;
+  color: hotpink;
+  font-weight: bold;
+}
+
+.single_container img {
+  width: auto;
+  padding: 0 30px;
+}
+
+.productDetails {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: white;
+  align-items: center;
+  border-radius: 2%;
+  margin-bottom: 50px;
 }

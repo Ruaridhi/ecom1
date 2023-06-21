@@ -1,6 +1,18 @@
 .footer {
-	width: 100%;
-	color: #45876d;
-	text-align: center;
-	padding: 20px;
+  width: 100%;
+  color: black;
+  text-align: center;
+  padding-top: 20px;
+  position: fixed;
+  bottom: 0;
+  height: 40px; /* Height of the footer */
+  font-family: 'Courier New', Courier, monospace;
+  /* z-index: -1000; */
+  background-color: white;
+}
+
+.copyright {
+  color: hotpink;
+  font-size: medium;
+  font-weight: bold;
 }

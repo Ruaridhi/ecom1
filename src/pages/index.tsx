@@ -6,7 +6,7 @@ import Link from 'next/link';
 import styles from './Products.module.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import Products from '../components/Products1';
+import Products from '../components/Products';
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 
 export default function Home({ allProducts }: { allProducts: any }) {
