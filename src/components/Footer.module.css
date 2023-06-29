@@ -1,4 +1,6 @@
 .footer {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   color: black;
   text-align: center;
@@ -9,6 +11,17 @@
   font-family: 'Courier New', Courier, monospace;
   /* z-index: -1000; */
   background-color: white;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  background-color: hotpink;
+  color: black;
 }
 
 .copyright {

@@ -1,0 +1,24 @@
+.aboutContainer {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  max-width: 60%;
+  margin: auto;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.aboutTitle {
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  font-size: 8em;
+}
+
+.span {
+  color: hotpink;
+}

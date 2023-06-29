@@ -41,6 +41,18 @@
   gap: 5px;
 }
 
-/* .link a:link {
-  text-decoration: none;
-} */
+.navLinks {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.link {
+  margin-right: 2em;
+}
+
+.link:hover {
+  background-color: hotpink;
+  padding: 1em;
+  border-radius: 5%;
+}

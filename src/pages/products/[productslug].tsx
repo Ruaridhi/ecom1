@@ -14,7 +14,7 @@ const singleproduct = ({ product }: { product: any }) => {
           All Pieces
         </Link>
         <div className={styles.cart}>
-          <span>🛒</span>
+          <span className="snipcart-checkout">🛒</span>
           {/* only show when cart is not empty ? <p>$0.00</p> : null*/}
         </div>
       </div>
@@ -25,14 +25,24 @@ const singleproduct = ({ product }: { product: any }) => {
           <img src={product.image.url} width={300} height={700} alt="" />
         </div>
         <div className="right-section">
-          <p className="price">${product.price}</p>
+          <p className="price">€{product.price}</p>
           <p>{product.description?.text}</p>
           {/* <div
           dangerouslySetInnerHTML={{
             __html: product.description?.html,
           }}
         ></div> */}
-          <button className="btn">Add to cart 🛒</button>
+          <button
+            className="btn snipcart-add-item"
+            data-item-price={product.price}
+            data-item-id={product.id}
+            // data-item-price='{"eur": product.price}'
+            data-item-url={`products/${product.slug}`}
+            data-item-image={product.image.url}
+            data-item-name={product.name}
+          >
+            Add to cart 🛒
+          </button>
         </div>
       </div>
     </div>

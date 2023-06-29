@@ -32,3 +32,5 @@ body {
 /* a:link {
   text-decoration: none;
 } */
+
+@import '_document';
